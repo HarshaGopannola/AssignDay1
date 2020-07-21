@@ -1,7 +1,17 @@
-console.log('Assignment2 Ans3');
+console.log('Assignment4 Ans3');
 
-let shoppingList = ['oil', 'ricebag', 'milk'];
-console.log(shoppingList);
 
-let shoppingBasket = [ 'curd', 'cookies', 'vegies'];
-console.log(shoppingBasket.concat(shoppingList));
+/* fetch('https://jsonplaceholder.typicode.com/todos').then
+(response=>response.json()).then(data=>
+    console.log(data));
+*/
+
+
+async function fetchjson(){
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const data = await response;
+
+    console.log(data);
+}
+
+fetchjson();

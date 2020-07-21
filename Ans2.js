@@ -1,65 +1,58 @@
-/* There are many types of string Methods */
+console.log('Assignment5 Ans2');
 
-var stringone = 'My name is Harsha.';
-var  stringtwo = "I joined letsupgrade."
+class User {
+    constructor(name, age, email) {
+        this.name =name;
+        this.age =age;
+        this.email =email;
+        this.Addcoins = '';
+        this.removecoins = '';
+        this.courses = [];
+    }
 
-// charAt()
-console.log(stringone.charAt(5));
+    login(){
+        console.log(`${this.name} has logged in`);
+    }
+    logout(){
+        console.log(`${this.name} has logged out`);
+    }
+}
 
-// concat()
-console.log(stringone.concat(stringtwo));
+class Moderator extends User{
+        Addcoins(user, coins){
+         user.Addcoins.push(coins);
+         console.log(user);
+     }
+}
 
-// endsWith()
-console.log(stringone.endsWith('Harsha.'));
+class Admin extends Moderator{
+        addCourse(user, course){
+            user.courses.push(course);
+            console.log(user);
+        }
 
-// repeat()
-console.log(stringone.repeat(2));
+}
 
-// replace()
-console.log(stringone.replace(/Harsha/g, 'Gopannola'));
-
-//There are many other strings.
+ 
 
 
-// Follow are array methods
+let user1 =  new  User('Harsha', 25, 'harsha@gmail.com');
+let user2 =  new  User('Reddy', 24, 'reddy@gmail.com');
+let mod = new Moderator('Naveen', 24, 'N@gmail.com');
+let admin = new Admin('Vardhan', 25, 'Var@gmail.com');
 
-var arr = ['a', 'b', 'c'];
+let users = [user1, user2, mod, admin];
 
-// push()
-arr.push('d');
-console.log(arr);
+users.forEach(element =>{
+    console.log(element);
+});
 
-//pop()
-console.log(arr.pop());
-console.log(arr);
+user2.login();
+user1.logout();
 
-// concat()
+admin.addCourse(user1, 'javascript');
+admin.addCourse(user2, 'python');
 
-var arr2 = ['g', 'f'];
 
-console.log(arr.concat(arr2));
 
-// reverse()
 
-console.log(arr.reverse());
-
-//shift()
-
-console.log(arr.shift());
-console.log(arr);
-
-// sort()
-
-console.log(arr.reverse());
-
-arr.push('i', 'w', 'r');
-console.log(arr.push());
-
-console.log(arr);
-
-console.log(arr.sort());
-
-// slice()
-
-console.log(arr.splice(1, 3, 'Letsupgrade'));
-console.log(arr);
