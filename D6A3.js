@@ -19,7 +19,6 @@ function clock(){
     let date = new Date();
     let time = data.toLocaleTimeString();
     ctime.innerText = time;
-   
 }
 
 setInterval(clock,1000);
