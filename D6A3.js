@@ -13,6 +13,17 @@ const name  = prompt('Enter your Name');
 
 title.innerText += `Welcome to my First  WEB  page ${name}`;
 
+const ctime = document.getElementById('time');
+
+function clock(){
+    let date = new Date();
+    let time = data.toLocaleTimeString();
+    ctime.innerText = time;
+   
+}
+
+setInterval(clock,1000);
+
 
 const dmode = document.getElementById('Dark');
 
